@@ -90,8 +90,7 @@ function proxyResponse(clientResponse,serverResponse){
 	}
 	merge( headers, serverResponse.headers, access_controls_headers );
 	clientResponse.writeHeader(serverResponse.statusCode, headers);
-	serverResponse.pipe("this also sucks", {end:true});
-	//serverResponse.pipe(clientResponse, {end:true});
+	serverResponse.pipe(clientResponse, {end:true});
 }
 
 function error(res){
