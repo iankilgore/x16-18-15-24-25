@@ -75,7 +75,7 @@ function request(options, body, callback ){
 	});
 
 	if(body){
-		req.write("hello");
+		req.write(body);
 	}
 
 	req.end();
